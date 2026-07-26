@@ -280,7 +280,7 @@
     <section class="features-strip">
         <div class="container">
             <div class="feature-item reveal"><div class="feature-icon"><i class="fa-solid fa-water"></i></div><div class="feature-text"><h4>50 м до моря</h4><p>Первая береговая линия</p></div></div>
-            <div class="feature-item reveal"><div class="feature-icon"><i class="fa-solid fa-person-swimming"></i></div><div class="feature-text"><h4>Панорамный бассейн</h4><p>На крыше с видом</p></div></div>
+            <div class="feature-item reveal"><div class="feature-icon"><i class="fa-solid fa-person-swimming"></i></div><div class="feature-text"><h4>Панорамный бассейн на крыше</h4><p>С видом на возвышенности</p></div></div>
             <div class="feature-item reveal"><div class="feature-icon"><i class="fa-solid fa-music"></i></div><div class="feature-text"><h4>Живая музыка</h4><p>Концертные вечера</p></div></div>
             <div class="feature-item reveal"><div class="feature-icon"><i class="fa-solid fa-square-parking"></i></div><div class="feature-text"><h4>Автопаркинг</h4><p>Охраняемая территория</p></div></div>
         </div>
@@ -313,7 +313,7 @@
             <div class="section-header reveal"><span class="section-label">Преимущества</span><h2>Почему выбирают нас</h2></div>
             <div class="advantages-grid">
                 <div class="adv-card reveal"><div class="adv-icon"><i class="fa-solid fa-water"></i></div><h4>50 м до моря</h4><p>Первая линия</p></div>
-                <div class="adv-card reveal"><div class="adv-icon"><i class="fa-solid fa-person-swimming"></i></div><h4>Панорамный бассейн</h4><p>Вид на море</p></div>
+                <div class="adv-card reveal"><div class="adv-icon"><i class="fa-solid fa-person-swimming"></i></div><h4>Панорамный бассейн</h4><p>На крыше</p></div>
                 <div class="adv-card reveal"><div class="adv-icon"><i class="fa-solid fa-music"></i></div><h4>Живая музыка</h4><p>Концерты</p></div>
                 <div class="adv-card reveal"><div class="adv-icon"><i class="fa-solid fa-utensils"></i></div><h4>Столовая</h4><p>Вкусное меню</p></div>
                 <div class="adv-card reveal"><div class="adv-icon"><i class="fa-solid fa-wifi"></i></div><h4>Wi-Fi</h4><p>Бесплатно</p></div>
@@ -331,7 +331,7 @@
             <div class="gallery-slider reveal" id="gallerySlider">
                 <img id="galleryMainImg" src="3.jpg" alt="Отель Elegant в Ольгинке">
                 <div class="gallery-nav"><button id="galleryPrev"><i class="fa-solid fa-chevron-left"></i></button><button id="galleryNext"><i class="fa-solid fa-chevron-right"></i></button></div>
-                <div class="gallery-counter" id="galleryCounter">1 / 17</div>
+                <div class="gallery-counter" id="galleryCounter">1 / 20</div>
             </div>
         </div>
     </section>
@@ -411,7 +411,12 @@
             const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { rootMargin: '0px 0px -30px 0px', threshold: 0.1 });
             revealEls.forEach(el => observer.observe(el));
 
-            const gallery = ['3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg'];
+            // ✅ ГАЛЕРЕЯ: ТЕПЕРЬ 20 ФОТО
+            const gallery = [
+                '3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg',
+                '11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg',
+                '19.jpg','20.jpg','21.jpg','22.jpg'
+            ];
             let idx = 0;
             const img = document.getElementById('galleryMainImg');
             const counter = document.getElementById('galleryCounter');
