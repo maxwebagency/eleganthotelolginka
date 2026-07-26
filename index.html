@@ -125,93 +125,15 @@
         .gallery-nav button { pointer-events: auto; background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--gold); width: 44px; height: 44px; border-radius: 50%; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition-fast); color: var(--dark); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         .gallery-nav button:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
         .gallery-counter { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.55); color: #fff; padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; pointer-events: none; }
-
-        /* ЛАЙТБОКС */
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.9);
-            z-index: 3000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.35s, visibility 0.35s;
-            cursor: zoom-out;
-        }
-        .lightbox.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .lightbox img {
-            max-width: 90vw;
-            max-height: 85vh;
-            object-fit: contain;
-            background: transparent;
-            border-radius: 12px;
-            cursor: default;
-            transition: opacity 0.3s;
-        }
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 2.5rem;
-            color: #fff;
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 10;
-            transition: var(--transition-fast);
-        }
-        .lightbox-close:hover {
-            transform: scale(1.15);
-            color: var(--gold-light);
-        }
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(4px);
-            border: none;
-            color: #fff;
-            font-size: 2.5rem;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition-fast);
-            z-index: 10;
-        }
-        .lightbox-nav:hover {
-            background: rgba(255,255,255,0.4);
-            transform: translateY(-50%) scale(1.1);
-        }
-        .lightbox-prev { left: 20px; }
-        .lightbox-next { right: 20px; }
-        .lightbox-counter {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #fff;
-            background: rgba(0,0,0,0.5);
-            padding: 4px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        @media (max-width: 768px) {
-            .lightbox-nav { width: 44px; height: 44px; font-size: 2rem; }
-            .lightbox-prev { left: 10px; }
-            .lightbox-next { right: 10px; }
-            .lightbox-close { font-size: 2rem; top: 15px; right: 20px; }
-        }
-
+        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 3000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.35s, visibility 0.35s; cursor: zoom-out; }
+        .lightbox.active { opacity: 1; visibility: visible; }
+        .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; background: transparent; border-radius: 12px; cursor: default; transition: opacity 0.3s; }
+        .lightbox-close { position: absolute; top: 20px; right: 30px; font-size: 2.5rem; color: #fff; background: none; border: none; cursor: pointer; z-index: 10; transition: var(--transition-fast); }
+        .lightbox-close:hover { transform: scale(1.15); color: var(--gold-light); }
+        .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); backdrop-filter: blur(4px); border: none; color: #fff; font-size: 2.5rem; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition-fast); z-index: 10; }
+        .lightbox-nav:hover { background: rgba(255,255,255,0.4); transform: translateY(-50%) scale(1.1); }
+        .lightbox-prev { left: 20px; } .lightbox-next { right: 20px; }
+        .lightbox-counter { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: #fff; background: rgba(0,0,0,0.5); padding: 4px 16px; border-radius: 20px; font-size: 0.9rem; }
         .rooms-section { background: var(--cream); }
         .rooms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .room-card { background: #fff; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--card-shadow); transition: var(--transition); cursor: pointer; display: flex; flex-direction: column; }
@@ -278,6 +200,42 @@
         .floating-btn.whatsapp { background: #25D366; color: #fff; } .floating-btn.phone { background: var(--gold-gradient); color: #fff; }
         .floating-btn.telegram { background: #26A5E4; color: #fff; } .floating-btn.instagram { background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCAF45); color: #fff; }
         .floating-btn:hover { transform: translateY(-4px) scale(1.08); box-shadow: 0 14px 36px rgba(0,0,0,0.3); }
+        /* МУЗЫКА */
+        .music-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 901;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(6px);
+            border: 1px solid var(--gold-light);
+            color: var(--gold-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .music-btn:hover {
+            background: var(--gold);
+            color: #fff;
+            border-color: var(--gold);
+            transform: scale(1.08);
+        }
+        @media (max-width: 768px) {
+            .music-btn {
+                bottom: 20px;
+                left: 20px;
+                width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+        }
         @media (max-width: 1024px) {
             .advantages-grid { grid-template-columns: repeat(3, 1fr); }
             .rooms-grid { grid-template-columns: repeat(2, 1fr); }
@@ -423,7 +381,6 @@
         </div>
     </section>
 
-    <!-- ЛАЙТБОКС -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" id="lightboxClose">&times;</button>
         <img id="lightboxImg" src="" alt="Фото галереи">
@@ -483,6 +440,11 @@
         <a href="https://t.me/eleganthotelresortolginka" target="_blank" class="floating-btn telegram"><i class="fa-brands fa-telegram"></i></a>
         <a href="https://www.instagram.com/elegant_hotel_resort" target="_blank" class="floating-btn instagram"><i class="fa-brands fa-instagram"></i></a>
     </div>
+    <button class="music-btn" id="musicToggle" title="Включить/выключить музыку"><i class="fa-solid fa-music"></i></button>
+
+    <audio id="bgMusic" loop preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
         (function() {
@@ -547,7 +509,7 @@
                 autoSlideInterval = setInterval(() => {
                     idx = (idx + 1) % gallery.length;
                     updateGallery();
-                }, 3000);  // изменено на 3000 мс (3 секунды)
+                }, 3000);
             }
 
             function resetAutoSlide() {
@@ -575,7 +537,7 @@
                 idx = (idx + direction + gallery.length) % gallery.length;
                 lightboxImg.src = gallery[idx];
                 lightboxCounter.textContent = (idx + 1) + ' / ' + gallery.length;
-                updateGallery(); // синхронизируем основной слайдер
+                updateGallery();
                 resetAutoSlide();
             }
 
@@ -605,6 +567,43 @@
             });
 
             startAutoSlide();
+
+            // Музыка
+            const bgMusic = document.getElementById('bgMusic');
+            const musicToggle = document.getElementById('musicToggle');
+            let musicStarted = false;
+
+            function startMusic() {
+                if (!musicStarted) {
+                    bgMusic.volume = 0.22;
+                    bgMusic.play().then(() => {
+                        musicStarted = true;
+                        musicToggle.classList.add('playing');
+                    }).catch(e => console.log('Автовоспроизведение заблокировано'));
+                }
+            }
+
+            // Запуск музыки при первом клике в любом месте
+            document.addEventListener('click', function initMusic(e) {
+                startMusic();
+                document.removeEventListener('click', initMusic);
+            }, { once: true });
+
+            // Кнопка управления музыкой (после первого запуска)
+            musicToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (!musicStarted) {
+                    startMusic();
+                } else {
+                    if (bgMusic.paused) {
+                        bgMusic.play();
+                        musicToggle.classList.add('playing');
+                    } else {
+                        bgMusic.pause();
+                        musicToggle.classList.remove('playing');
+                    }
+                }
+            });
 
             // Номера (без изменений)
             const roomsData = {
