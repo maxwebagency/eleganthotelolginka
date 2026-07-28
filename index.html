@@ -92,7 +92,7 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             z-index: 0;
         }
         .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.18) 30%, rgba(0,0,0,0.25) 65%, rgba(0,0,0,0.7) 100%); z-index: 1; }
@@ -280,7 +280,7 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="#hero">Главная</a></li><li><a href="#about">О гостинице</a></li><li><a href="#advantages">Преимущества</a></li>
-                    <li><a href="#gallery">Галерея</a></li><li><a href="#rooms">Номера</a></li><li><a href="#info">Контакты</a></li>
+                    <li><a href="#gallery">Галерея</a></li><li><a href="#rooms">Номерной фонд</a></li><li><a href="#info">Контакты</a></li>
                 </ul>
             </nav>
             <div class="nav-cta">
@@ -292,7 +292,7 @@
     <div class="overlay" id="overlay"></div>
     <nav class="mobile-nav" id="mobileNav">
         <a href="#hero">Главная</a><a href="#about">О гостинице</a><a href="#advantages">Преимущества</a>
-        <a href="#gallery">Галерея</a><a href="#rooms">Номера</a><a href="#info">Контакты</a>
+        <a href="#gallery">Галерея</a><a href="#rooms">Номерной фонд</a><a href="#info">Контакты</a>
         <a href="tel:+79676666638" class="btn btn-gold"><i class="fa-solid fa-phone"></i> Позвонить</a>
     </nav>
 
@@ -383,9 +383,9 @@
     <section class="section rooms-section" id="rooms">
         <div class="container"><div class="section-header reveal"><span class="section-label">Номерной фонд</span><h2>Выберите свой идеальный номер</h2><p>Нажмите на карточку, чтобы увидеть подробности</p></div>
             <div class="rooms-grid reveal">
-                <div class="room-card" data-room="1"><div class="room-card__img"><i class="fa-solid fa-bed"></i></div><div class="room-card__body"><h3 class="room-card__title">2-х местный «DELUXE»</h3><p class="room-card__desc">6 номеров · 20 м² · 1 комната · 2 гостя</p><button class="btn btn-gold btn-sm room-card__btn">Подробнее</button></div></div>
-                <div class="room-card" data-room="2"><div class="room-card__img"><i class="fa-solid fa-bed"></i></div><div class="room-card__body"><h3 class="room-card__title">3-х местный «DELUXE»</h3><p class="room-card__desc">5 номеров · 25 м² · 1 комната · 3 гостя</p><button class="btn btn-gold btn-sm room-card__btn">Подробнее</button></div></div>
-                <div class="room-card" data-room="3"><div class="room-card__img"><i class="fa-solid fa-bed"></i></div><div class="room-card__body"><h3 class="room-card__title">4-х местный «DELUXE»</h3><p class="room-card__desc">1 номер · 30–35 м² · 2 комнаты · 4 гостя</p><button class="btn btn-gold btn-sm room-card__btn">Подробнее</button></div></div>
+                <div class="room-card" data-room="1"><div class="room-card__img"><i class="fa-solid fa-bed"></i></div><div class="room-card__body"><h3 class="room-card__title">2-х местный «DELUXE»</h3><p class="room-card__desc">В разработке</p><button class="btn btn-gold btn-sm room-card__btn">Подробнее</button></div></div>
+                <div class="room-card" data-room="2"><div class="room-card__img"><i class="fa-solid fa-bed"></i></div><div class="room-card__body"><h3 class="room-card__title">3-х местный «DELUXE»</h3><p class="room-card__desc">В разработке</p><button class="btn btn-gold btn-sm room-card__btn">Подробнее</button></div></div>
+                <div class="room-card" data-room="3"><div class="room-card__img"><i class="fa-solid fa-bed"></i></div><div class="room-card__body"><h3 class="room-card__title">4-х местный «DELUXE»</h3><p class="room-card__desc">В разработке</p><button class="btn btn-gold btn-sm room-card__btn">Подробнее</button></div></div>
                 <div class="room-card" data-room="4"><div class="room-card__img"><img src="23.jpg" alt="Семейный люкс"></div><div class="room-card__body"><h3 class="room-card__title">Семейный люкс</h3><p class="room-card__desc">Двухкомнатный · Вид на море</p><button class="btn btn-gold btn-sm room-card__btn">Подробнее</button></div></div>
             </div>
         </div>
@@ -548,23 +548,15 @@
                 bgMusic.play().then(() => {
                     musicStarted = true;
                     musicToggle.classList.add('playing');
-                }).catch(() => {
-                    // Автовоспроизведение заблокировано, ждём клика
-                    musicStarted = false;
-                });
+                }).catch(() => {});
             }
 
-            // Попытка автоматического запуска при загрузке
             window.addEventListener('load', startMusic);
 
-            // Запуск при первом клике (для устройств, блокирующих автовоспроизведение)
             document.addEventListener('click', function initMusic() {
-                if (!musicStarted) {
-                    startMusic();
-                }
+                if (!musicStarted) startMusic();
             });
 
-            // Ручное управление кнопкой
             musicToggle.addEventListener('click', function(e) {
                 e.stopPropagation();
                 if (!musicStarted) {
@@ -581,9 +573,9 @@
             });
 
             const roomsData = {
-                1: { title: '2-х местный семейный «DELUXE»', images: ['https://via.placeholder.com/800x500/f8f3ea/C9A76B?text=2-х+местный+1','https://via.placeholder.com/800x500/f8f3ea/C9A76B?text=2-х+местный+2'], specs: [{icon:'fa-door-open',text:'6 номеров'},{icon:'fa-bed',text:'2 спальных места (+1 доп.)'},{icon:'fa-vector-square',text:'20 м²'},{icon:'fa-cube',text:'1 комната'},{icon:'fa-stairs',text:'1–2 этаж'},{icon:'fa-toilet',text:'Совмещённый санузел'}], furniture: ['Односпальные / двуспальная кровати','Прикроватные тумбочки','Шкаф','Стулья','Пуфики','Туалетный столик','Вешалка'], amenities: ['Кондиционер','Холодильник','Вентилятор','Спутниковое ТВ','Электрический чайник','Wi-Fi','Фен','Балкон'], prices: {'Июнь':'2500 ₽','Июль':'3000 ₽','Август':'3000 ₽','Сентябрь':'2500 ₽'}, note: 'Цены ориентировочные.' },
-                2: { title: '3-х местный семейный «DELUXE»', images: ['https://via.placeholder.com/800x500/f8f3ea/C9A76B?text=3-х+местный+1','https://via.placeholder.com/800x500/f8f3ea/C9A76B?text=3-х+местный+2'], specs: [{icon:'fa-door-open',text:'5 номеров'},{icon:'fa-bed',text:'3 спальных места'},{icon:'fa-vector-square',text:'25 м²'},{icon:'fa-cube',text:'1 комната'},{icon:'fa-stairs',text:'1–2 этаж'},{icon:'fa-toilet',text:'Совмещённый санузел'}], furniture: ['Односпальные / двуспальная кровати','Прикроватные тумбочки','Шкаф','Стулья','Пуфики','Туалетный столик','Вешалка'], amenities: ['Кондиционер','Холодильник','Вентилятор','Электрический чайник','Wi-Fi','Фен','Балкон'], prices: {'Июнь':'3500 ₽','Июль':'4500 ₽','Август':'4500 ₽','Сентябрь':'4000 ₽'}, note: 'Цены ориентировочные.' },
-                3: { title: '4-х местный семейный «DELUXE»', images: ['https://via.placeholder.com/800x500/f8f3ea/C9A76B?text=4-х+местный+1','https://via.placeholder.com/800x500/f8f3ea/C9A76B?text=4-х+местный+2'], specs: [{icon:'fa-door-open',text:'1 номер'},{icon:'fa-bed',text:'4 спальных места'},{icon:'fa-vector-square',text:'30–35 м²'},{icon:'fa-cube',text:'2 комнаты'},{icon:'fa-stairs',text:'2 этаж'},{icon:'fa-toilet',text:'Совмещённый санузел'}], furniture: ['Односпальные / двуспальная кровати','Прикроватные тумбочки','Шкаф','Стулья','Пуфики','Туалетный столик','Вешалка'], amenities: ['Кондиционер','Холодильник','Вентилятор','Электрический чайник','Wi-Fi','Фен','Балкон'], prices: {'Июнь':'6000 ₽','Июль':'6000 ₽','Август':'6000 ₽','Сентябрь':'5500 ₽'}, note: 'Цены ориентировочные.' },
+                1: { title: '2-х местный семейный «DELUXE»', placeholder: true, note: 'В разработке' },
+                2: { title: '3-х местный семейный «DELUXE»', placeholder: true, note: 'В разработке' },
+                3: { title: '4-х местный семейный «DELUXE»', placeholder: true, note: 'В разработке' },
                 4: { title: 'СЕМЕЙНЫЙ ДВУХКОМНАТНЫЙ ЛЮКС С ВИДОМ НА МОРЕ', images: ['24.jpg','25.jpg','26.jpg','27.jpg','28.jpg'], specs: [{icon:'fa-door-open',text:'1 номер'},{icon:'fa-bed',text:'4 спальных места'},{icon:'fa-vector-square',text:'35 м²'},{icon:'fa-cube',text:'2 комнаты'},{icon:'fa-stairs',text:'2 этаж'},{icon:'fa-toilet',text:'Раздельный санузел'}], furniture: ['Двуспальная кровать','Две односпальные кровати','Прикроватные тумбочки','Шкаф-купе','Обеденный стол','Стулья','Пуфики','Туалетный столик'], amenities: ['Кондиционер','Холодильник','Спутниковое ТВ','Электрический чайник','Wi-Fi','Фен','Балкон с видом на море'], prices: {'Июнь':'8000 ₽','Июль':'9000 ₽','Август':'9000 ₽','Сентябрь':'7500 ₽'}, note: 'Цены ориентировочные.' }
             };
             const roomModalOverlay = document.getElementById('roomModalOverlay');
@@ -602,19 +594,20 @@
             }
             function closeRoomModal() { roomModalOverlay.classList.remove('active'); document.body.classList.remove('modal-open'); currentRoom = null; }
             function updateRoomModalImage() {
-                if(!currentRoom) return;
+                if(!currentRoom || !currentRoom.images) return;
                 const imgs = currentRoom.images;
                 if(imgs.length) { roomModalImage.src = imgs[currentImageIndex]; roomModalCounter.textContent = `${currentImageIndex+1} / ${imgs.length}`; }
                 roomModalPrev.style.visibility = imgs.length>1 ? 'visible' : 'hidden';
                 roomModalNext.style.visibility = imgs.length>1 ? 'visible' : 'hidden';
             }
-            function prevImage() { if(!currentRoom||!currentRoom.images.length) return; currentImageIndex = (currentImageIndex-1+currentRoom.images.length)%currentRoom.images.length; updateRoomModalImage(); }
-            function nextImage() { if(!currentRoom||!currentRoom.images.length) return; currentImageIndex = (currentImageIndex+1)%currentRoom.images.length; updateRoomModalImage(); }
+            function prevImage() { if(!currentRoom||!currentRoom.images) return; currentImageIndex = (currentImageIndex-1+currentRoom.images.length)%currentRoom.images.length; updateRoomModalImage(); }
+            function nextImage() { if(!currentRoom||!currentRoom.images) return; currentImageIndex = (currentImageIndex+1)%currentRoom.images.length; updateRoomModalImage(); }
             function renderRoomModalBody() {
                 const d = currentRoom;
                 let h = `<h3 class="room-modal__title">${d.title}</h3>`;
-                if(d.placeholder) h += `<p style="color:var(--gray);text-align:center;">${d.note}</p>`;
-                else {
+                if(d.placeholder) {
+                    h += `<p style="color:var(--gray);text-align:center;">${d.note}</p>`;
+                } else {
                     h += `<div class="room-specs">${d.specs.map(s=>`<div class="spec-item"><i class="fa-solid ${s.icon}"></i> ${s.text}</div>`).join('')}</div>`;
                     h += `<div><h4>Мебель</h4><ul class="room-list">${d.furniture.map(f=>`<li>${f}</li>`).join('')}</ul></div>`;
                     h += `<div><h4>Удобства</h4><ul class="room-list">${d.amenities.map(a=>`<li>${a}</li>`).join('')}</ul></div>`;
