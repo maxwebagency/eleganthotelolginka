@@ -21,7 +21,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* … весь CSS без изменений, кроме изменений в .hero и .hero-subtitle … */
         :root {
             --gold: #C9A76B; --gold-light: #E2D0B0; --gold-dark: #A8863F; --gold-pale: #F8F3EA; --gold-soft: #FDF7F0;
             --white: #FFFFFF; --off-white: #FBFBFB; --cream: #FDF9F4; --dark: #1C1C1C; --dark-soft: #2D2D2D;
@@ -98,13 +97,13 @@
             -webkit-background-clip: text; background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: starShimmer 2.5s linear infinite;
-            display: block; margin-bottom: 18px; font-weight: 700; text-align: center;
+            display: block; margin-bottom: 8px; font-weight: 700; text-align: center;
         }
         @keyframes starShimmer {
             0% { background-position: -200% center; }
             100% { background-position: 200% center; }
         }
-        .hero-content h1 { margin-bottom: 24px; text-shadow: 0 2px 24px rgba(0,0,0,0.35); }
+        .hero-content h1 { margin-top: 0; margin-bottom: 24px; text-shadow: 0 2px 24px rgba(0,0,0,0.35); }
         .hero-content .hero-subtitle {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
@@ -115,12 +114,12 @@
             opacity: 0.95;
             margin-bottom: 40px;
             text-shadow: 0 2px 10px rgba(0,0,0,0.4);
-            min-height: 4em;
         }
         .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
         .hero-btns .btn-gold { font-size: 1rem; padding: 17px 40px; }
         .hero-btns .btn-outline-light { background: transparent; border: 1.5px solid rgba(255,255,255,0.7); color: #fff; font-size: 1rem; padding: 17px 40px; border-radius: 50px; cursor: pointer; transition: var(--transition); font-family: var(--font-body); text-decoration: none; }
         .hero-btns .btn-outline-light:hover { background: rgba(255,255,255,0.15); border-color: #fff; transform: translateY(-2px); }
+        /* ... остальные стили без изменений ... */
         .features-strip { background: var(--gold-soft); padding: 45px 0; border-bottom: 1px solid var(--gold-light); }
         .features-strip .container { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
         .feature-item { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 180px; max-width: 240px; }
@@ -236,7 +235,7 @@
             .hamburger { display: flex; }
             .hero { height: 85vh; min-height: 500px; padding-top: 10vh; }
             .hero-content h1 { font-size: 2.2rem; }
-            .hero-content .hero-subtitle { font-size: 1.2rem; min-height: auto; }
+            .hero-content .hero-subtitle { font-size: 1.2rem; }
             .hero-btns { flex-direction: column; align-items: stretch; }
             .hero-btns .btn, .hero-btns .btn-outline-light { justify-content: center; width: 100%; }
             .section { padding: 60px 0; }
@@ -315,7 +314,7 @@
             <img src="" alt="Логотип отеля" class="hero-logo-placeholder" style="opacity:0; width:120px; margin-bottom:20px;">
             <span class="hero-stars">★ ★ ★</span>
             <h1>Elegant Hotel Resort</h1>
-            <p class="hero-subtitle" id="heroSubtitle"></p>
+            <p class="hero-subtitle">Курортный дизайн-отель<br>с панорамным бассейном на крыше!<br>На берегу Чёрного моря в Ольгинке! ❤️</p>
             <div class="hero-btns">
                 <a href="#info" class="btn btn-gold"><i class="fa-solid fa-calendar-check"></i> Забронировать</a>
                 <a href="tel:+79676666638" class="btn-outline-light"><i class="fa-solid fa-phone"></i> Позвонить</a>
@@ -324,7 +323,6 @@
         </div>
     </section>
 
-    <!-- Остальной HTML без изменений -->
     <section class="features-strip">
         <div class="container">
             <div class="feature-item reveal"><div class="feature-icon"><i class="fa-solid fa-water"></i></div><div class="feature-text"><h4>50 м до моря</h4><p>Первая береговая линия</p></div></div>
@@ -395,7 +393,7 @@
         <div class="container"><div class="section-header reveal"><span class="section-label">Номерной фонд</span><h2>Выберите свой идеальный номер</h2><p>Нажмите на карточку, чтобы увидеть подробности</p></div>
             <div class="rooms-grid reveal">
                 <div class="room-card" data-room="1"><div class="room-card__img"><img src="31.jpg" alt="2-х местный DELUXE"></div><div class="room-card__body"><h3 class="room-card__title">2-х местный «DELUXE»</h3><p class="room-card__desc">Двухместный номер с премиальным комфортом</p><button class="btn btn-gold btn-sm room-card__btn">Подробнее</button></div></div>
-                <div class="room-card" data-room="2"><div class="room-card__img"><i class="fa-solid fa-bed"></i></div><div class="room-card__body"><h3 class="room-card__title">3-х местный «DELUXE»</h3><p class="room-card__desc">В разработке</p><button class="btn btn-gold btn-sm room-card__btn">Подробнее</button></div></div>
+                <div class="room-card" data-room="2"><div class="room-card__img"><img src="38.jpg" alt="3-х местный DELUXE"></div><div class="room-card__body"><h3 class="room-card__title">3-х местный «DELUXE»</h3><p class="room-card__desc">Просторный трёхместный номер с премиальным комфортом</p><button class="btn btn-gold btn-sm room-card__btn">Подробнее</button></div></div>
                 <div class="room-card" data-room="3"><div class="room-card__img"><i class="fa-solid fa-bed"></i></div><div class="room-card__body"><h3 class="room-card__title">4-х местный «DELUXE»</h3><p class="room-card__desc">В разработке</p><button class="btn btn-gold btn-sm room-card__btn">Подробнее</button></div></div>
                 <div class="room-card" data-room="4"><div class="room-card__img"><img src="23.jpg" alt="Семейный люкс"></div><div class="room-card__body"><h3 class="room-card__title">Семейный люкс</h3><p class="room-card__desc">Двухкомнатный · Вид на море</p><button class="btn btn-gold btn-sm room-card__btn">Подробнее</button></div></div>
             </div>
@@ -594,45 +592,17 @@
                 });
             }
 
-            // Печатный эффект для hero-подзаголовка
-            const subtitleEl = document.getElementById('heroSubtitle');
-            if (subtitleEl) {
-                const text = "Курортный дизайн-отель\nс панорамным бассейном на крыше!\nНа берегу Чёрного моря в Ольгинке! ❤️";
-                const lines = text.split('\n');
-                let currentLine = 0;
-                let currentChar = 0;
-                let currentHTML = '';
-
-                function typeWriter() {
-                    if (currentLine < lines.length) {
-                        if (currentChar < lines[currentLine].length) {
-                            currentHTML += lines[currentLine].charAt(currentChar);
-                            subtitleEl.innerHTML = currentHTML;
-                            currentChar++;
-                            setTimeout(typeWriter, 40);
-                        } else {
-                            currentHTML += '<br>';
-                            subtitleEl.innerHTML = currentHTML;
-                            currentLine++;
-                            currentChar = 0;
-                            setTimeout(typeWriter, 100);
-                        }
-                    }
-                }
-
-                // Запуск с задержкой после появления
-                window.addEventListener('load', () => {
-                    setTimeout(typeWriter, 500);
-                });
-            }
-
             const roomsData = {
                 1: { 
                     title: '2-х местный семейный «DELUXE»', 
                     images: ['31.jpg','32.jpg','33.jpg','34.jpg','35.jpg','36.jpg','37.jpg'],
                     desc: `✨ Делюкс двухместный — пространство, где рождается идеальный отдых\n\nОткройте для себя атмосферу настоящего комфорта в нашем роскошном двухместном номере Deluxe, где каждая деталь создана для вашего безупречного отдыха. Современный дизайнерский интерьер, благородные оттенки, мягкое освещение и элегантная мебель создают ощущение уюта и премиального уровня с первых минут пребывания.\n\nБелоснежная кровать King Size с ортопедическим матрасом подарит глубокий и спокойный сон, а панорамное окно наполнит номер естественным светом и лёгкостью. Здесь хочется забыть о суете, наслаждаться каждым моментом и просыпаться с улыбкой.\n\nВ вашем распоряжении:\n✨ Просторная кровать King Size с премиальным гостиничным бельём.\n✨ Современная ванная комната с душевой кабиной.\n✨ Индивидуальный кондиционер.\n✨ Smart TV и Wi-Fi.\n✨ Мини-холодильник.\n✨ Вместительный шкаф и стильная мебель.\n✨ Комплект мягких полотенец и туалетные принадлежности.\n✨ Светлый, просторный интерьер с атмосферой настоящего комфорта.`
                 },
-                2: { title: '3-х местный семейный «DELUXE»', placeholder: true, note: 'В разработке' },
+                2: { 
+                    title: '3-х местный семейный «DELUXE»', 
+                    images: ['38.jpg','39.jpg','40.jpg','41.jpg','42.jpg','43.jpg','44.jpg','45.jpg'],
+                    desc: `✨ Трёхместный номер Deluxe — простор, комфорт и атмосфера настоящего курорта\n\nДобро пожаловать в наш трёхместный номер Deluxe — идеальное пространство для семейного отдыха или путешествия с друзьями. Просторный дизайнерский интерьер, благородные оттенки, панорамное окно и изысканные детали создают атмосферу уюта, спокойствия и настоящего гостиничного комфорта.\n\nДве комфортные кровати с ортопедическими матрасами и белоснежным гостиничным бельём подарят полноценный отдых после насыщенного дня у моря. Мягкое освещение, стильный текстиль и элегантная мебель делают номер не только красивым, но и максимально удобным для проживания.\n\nВ номере:\n\n✨ До 3-х комфортных спальных мест.\n✨ Ортопедические матрасы и премиальное гостиничное бельё.\n✨ Современная система кондиционирования.\n✨ Smart TV с плоским экраном.\n✨ Wi-Fi.\n✨ Мини-холодильник.\n✨ Вместительный шкаф и удобная мебель.\n✨ Просторная ванная комната с современной душевой, мягкими полотенцами и всеми необходимыми принадлежностями.\n✨ Большое панорамное окно, наполняющее номер естественным светом.\n\nТрёхместный Deluxe — это идеальное сочетание простора, элегантности и современного комфорта, где каждая деталь создана для того, чтобы ваш отдых стал по-настоящему ярким, беззаботным и незабываемым. ✨`
+                },
                 3: { title: '4-х местный семейный «DELUXE»', placeholder: true, note: 'В разработке' },
                 4: { 
                     title: 'СЕМЕЙНЫЙ ДВУХКОМНАТНЫЙ ЛЮКС С ВИДОМ НА МОРЕ', 
